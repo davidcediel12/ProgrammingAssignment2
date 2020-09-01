@@ -1,7 +1,15 @@
-## Put comments here that give an overall description of what your
-## functions do
+## This script have two functions, one for create the matrix and the 
+## respective methods, and 'cacheSolve' that use the matrix created 
+## before to know if he inverse has been calculated yet, if the 
+## inverse has been already calculated, the function only get this 
+## value and return it, if the inverse hasn't been calculates, the
+## function is going to use solve() for calculate and setInverse for 
+## assign this value. 
 
-## Write a short comment describing this function
+## The function returns a list with 4 functions, set, that set the 
+## content of the matrix, get, that returns the matrix, setInverse, 
+## that is used in the first time when the inverse is not be calculated, 
+## and getInverse, that returns the inverse.
 
 makeCacheMatrix <- function(x = matrix()) {
       inverse <- NULL
@@ -17,7 +25,10 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Write a short comment describing this function
+## The function returns the inverse, if this was calculated before, 
+## only use this value and return it, if not, use  the builtin function 
+## solve() to get the inverse, then use setInverse and return the calculated
+## value
 
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
